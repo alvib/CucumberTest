@@ -12,14 +12,14 @@ import static pages.Login.*;
 
 public class LoginSteps extends BaseSteps {
 
-    @Когда("Заполняет поле email \"{word}\"")
+    @Когда("Заполняет поле email {string}")
     public LoginSteps inputEmail(String message) {
         fillField(email, message);
 
         return this;
     }
 
-    @Когда("Заполняет поле пароля \"{word}\"")
+    @Когда("Заполняет поле пароля {string}")
     public LoginSteps inputPassword(String message) {
         fillField(password, message);
 
@@ -57,6 +57,20 @@ public class LoginSteps extends BaseSteps {
     @Тогда("Отображается имя пользователя {string}")
     public LoginSteps verifyAccName(String expectedName) {
         $(accountNameText).shouldHave(text(expectedName));
+
+        return this;
+    }
+
+    @Тогда("Высвечивается сообщение о невалидном email {string}")
+    public LoginSteps verifyErrorInvalidEmailMessage(String expectedErrorMessage) {
+        $(invalidEmail).shouldHave(text(expectedErrorMessage));
+
+        return this;
+    }
+
+    @Тогда("Высвечивается сообщение о невалидном пароле {string}")
+    public LoginSteps verifyErrorInvalidPasswordMessage(String expectedErrorMessage) {
+        $(invalidPassword).shouldHave(text(expectedErrorMessage));
 
         return this;
     }

@@ -14,6 +14,9 @@ public class HomePage {
     @Description("Кнопка учетной записи на главной странице")
     public static final By accountButton = By.xpath("//a[contains(@class, 'clickable qa-show-sidetray-account')]");
 
+    @Description("Кнопка для перехода на страницу регистрации аккаунта")
+    public static final By signUpButton = By.xpath("//a[contains(@class, 'ember-view btn btn-sm btn-secondary')]");
+
     @Description("Кнопка открытия окна аккаунта для логина")
     public static final By signInButton = By.xpath("//button[@name='signin']");
 

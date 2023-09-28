@@ -25,4 +25,10 @@ public class Login {
 
     @Description("Имя авторизованного пользователя сверху на боковой панели аккаунта")
     public static final By accountNameText = By.xpath("//h2[@class='modal-title']");
+
+    @Description("Сообщение об ошибке при невалидном поле email")
+    public static final By invalidEmail = By.xpath("//div[text()='Please enter a valid email address.']");
+
+    @Description("Сообщение об ошибке при невалидном поле пароля")
+    public static final By invalidPassword = By.xpath("//div[@data-label-code='error.account.login.passwordInvalid']");
 }

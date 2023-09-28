@@ -5,6 +5,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/resources",
+        glue = "utils",
         tags = "@all",
         snippets = CucumberOptions.SnippetType.CAMELCASE
 )
